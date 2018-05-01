@@ -7,11 +7,13 @@ MAINTAINER Alan Christie (alanbchristie)
 
 RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
 RUN yum -y install \
+    python-pip \
     python36u \
     python36u-pip \
     python36u-devel
 
+RUN pip install --upgrade pip \
+    pip3.6 install --upgrade pip
+
 # We're root at this stage of the script.
-# Return to the underlying user id (1001).
-USER 1001
 WORKDIR ${HOME}
