@@ -12,7 +12,7 @@ RUN yum -y install \
     python36u-pip \
     python36u-devel
 
-RUN pip install --upgrade pip \
+RUN pip install --upgrade pip && \
     pip3.6 install --upgrade pip
 
 # We're root at this stage of the script.
