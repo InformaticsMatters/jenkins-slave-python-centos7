@@ -1,0 +1,17 @@
+# A Dockerfile to build an OpenShift Jenkins Slave Agent.
+# It's based on the OpenShift Base image.
+
+# The v3.9 digest...
+FROM openshift/jenkins-slave-base-centos7@sha256:72703571ef822fcf9cfa3448f043485adde297bd811d13033492b90cdc1e22c3
+MAINTAINER Alan Christie (alanbchristie)
+
+RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+RUN yum -y install \
+    python36u \
+    python36u-pip \
+    python36u-devel
+
+# We're root at this stage of the script.
+# Return to the underlying user id (1001).
+USER 1001
+WORKDIR ${HOME}
