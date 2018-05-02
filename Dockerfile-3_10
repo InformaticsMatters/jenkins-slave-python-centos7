@@ -10,4 +10,6 @@ RUN yum -y install python-pip
 RUN pip install --upgrade pip
 
 # We're root at this stage of the script.
+# Back to the base-image user (we know this empirically).
+USER 1001
 WORKDIR ${HOME}

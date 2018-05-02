@@ -15,7 +15,7 @@ suitable for OpenShift Origin v3.6/v3.7 deployments. A matching
 I use, and you might need...
 
 -   Docker Engine `18.03.1-ce`
--   Docker Compose `1.20.1`
+-   Docker Compose `1.21.0`
     
 Build and tag the image...
 
