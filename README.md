@@ -1,4 +1,4 @@
-# An OpenShift Jenkins Slave Agent Image for "python"
+# An OpenShift Jenkins Slave Agent Image for "Python 2"
 This is a Jenkins slave image built on the OpenShift Jenkins Base
 slave that adds [Python] to the image. It should be
 suitable for OpenShift Origin v3.6/v3.7 deployments. A matching
@@ -41,7 +41,7 @@ as the `agent` in your Jenkins _pipeline_ where you'd normally refer to an
 agent:
 
     agent {
-      label 'bpython-slave'
+      label 'python-slave'
     }
 
 >   You may need to re-deploy Jenkins (_bounce its Pod_) because it only looks
