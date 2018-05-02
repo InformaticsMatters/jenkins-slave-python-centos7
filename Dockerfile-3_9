@@ -9,6 +9,13 @@ RUN yum -y --enablerepo=extras install epel-release
 RUN yum -y install python-pip
 RUN pip install --upgrade pip
 
+# To fix the error: -
+#       UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3
+#                in position 3516: ordinal not in range(128)
+# Seen when trying to install pyroma v2.3.
+# We ned to set `LC_ALL` and allow utc-8.
+ENV LC_ALL=en_US.UTF-8
+
 # We're root at this stage of the script.
 # Back to the base-image user (we know this empirically).
 USER 1001
