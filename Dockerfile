@@ -9,6 +9,10 @@ RUN yum -y --enablerepo=extras install epel-release
 RUN yum -y install python-pip
 RUN pip install --upgrade pip
 
+# Adjust path for ''--user' use of pip
+# where stuff gets installed in ${HOME}/.local/bin
+ENV PATH ${PATH}:/home/jenkins/.local/bin
+
 # To fix the error: -
 #       UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3
 #                in position 3516: ordinal not in range(128)
