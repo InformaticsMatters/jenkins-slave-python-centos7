@@ -8,6 +8,7 @@ MAINTAINER Alan Christie (alanbchristie)
 RUN yum -y --enablerepo=extras install epel-release
 RUN yum -y install python-pip
 RUN pip install --upgrade pip
+RUN pip install setuptools==39.1.0
 
 # Adjust path for ''--user' use of pip
 # where stuff gets installed in ${HOME}/.local/bin
