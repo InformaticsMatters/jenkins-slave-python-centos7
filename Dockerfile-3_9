@@ -5,6 +5,7 @@
 FROM openshift/jenkins-slave-base-centos7@sha256:72703571ef822fcf9cfa3448f043485adde297bd811d13033492b90cdc1e22c3
 MAINTAINER Alan Christie (alanbchristie)
 
+RUN yum -y --enablerepo=extras install epel-release
 RUN yum -y install python-pip
 RUN pip install --upgrade pip
 

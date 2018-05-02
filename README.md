@@ -1,4 +1,4 @@
-# An OpenShift Jenkins Slave Agent Image for "Python 2"
+# An OpenShift Jenkins Slave Agent Image for "Python 2.7"
 This is a Jenkins slave image built on the OpenShift Jenkins Base
 slave that adds [Python] to the image. It should be
 suitable for OpenShift Origin v3.6/v3.7 deployments. A matching
@@ -7,6 +7,9 @@ suitable for OpenShift Origin v3.6/v3.7 deployments. A matching
 >   For background material you can refer to the OpenShift documentation for
     their [Jenkins] service and general information on [builds] and image
     streams.
+
+>   The Python installed is defined by the OpenShift **base** image and
+    is (at the time of writing) `2.7.5`.
 
 ## Building the image
 I use, and you might need...
