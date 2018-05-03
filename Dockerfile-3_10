@@ -10,7 +10,9 @@ RUN yum -y group install "Development Tools"
 
 # Install Python and the latest setup tools
 RUN yum -y --enablerepo=extras install epel-release
-RUN yum -y install python-pip
+RUN yum -y install \
+    python-devel.x86_64 \
+    python-pip
 RUN pip install --upgrade pip
 RUN pip install setuptools==39.1.0
 
